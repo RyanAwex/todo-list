@@ -1,0 +1,22 @@
+### Get all Todos
+GET http://localhost:5000/api/todos
+
+
+### Add a Todo
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+  "text": "help your mom"
+}
+
+
+### edit a Todo
+PUT http://localhost:5000/api/todos/4
+Content-Type: application/json
+
+
+### delete a Todo
+DELETE http://localhost:5000/api/todos/1
+
+

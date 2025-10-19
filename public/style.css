@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f7f9fb; /* Light background */
+}
+
+/* 1. Hide the real checkbox input */
+.todo-checkbox {
+  display: none;
+}
+
+/* 2. Style the label (the clickable todo item container) */
+.todo-item-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #3b82f6; /* Blue border for open tasks */
+}
+
+.todo-item-label:hover {
+  background-color: #f1f5f9;
+}
+
+/* 3. Custom Checkmark Indicator (The empty circle) */
+.todo-item-label::before {
+  content: "";
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #6b7280; /* Gray border */
+  border-radius: 50%;
+  margin-right: 1rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.trash-icon {
+  font-size: 1rem;
+  color: black;
+}
+.trash-icon:hover {
+  opacity: 0.7;
+}
+.trash-icon:active {
+  opacity: 0.5;
+}
+
+.seperated {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 4. State: When the checkbox is CHECKED */
+.todo-checkbox:checked + .todo-item-label {
+  color: #9ca3af; /* Light gray text */
+  border-left: 4px solid #10b981; /* Green border for completed tasks */
+}
+
+/* 5. Style for completed task text (strikethrough) */
+.todo-checkbox:checked + .todo-item-label .task-text {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+/* 6. State: When CHECKED, change the indicator to a solid checkmark */
+.todo-checkbox:checked + .todo-item-label::before {
+  background-color: #10b981; /* Emerald green fill */
+  border-color: #10b981;
+  /* SVG checkmark in white */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 12.75l6 6 9-13.5' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

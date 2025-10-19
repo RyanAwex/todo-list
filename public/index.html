@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple CSS To-Do List</title>
+    <!-- Load Tailwind CSS for utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="p-4 md:p-8 min-h-screen flex items-start justify-center">
+    <div class="w-full max-w-lg">
+      <!-- H1 Header -->
+      <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">
+        To-Do List
+      </h1>
+
+      <!-- Text Input & Add Button (Non-functional, appearance only) -->
+      <div class="flex gap-2 mb-8 p-1 bg-white rounded-lg shadow-md">
+        <!-- Text Input -->
+        <input
+          type="text"
+          placeholder="Add a new task..."
+          class="flex-grow p-3 text-lg border-none focus:outline-none rounded-l-lg bg-transparent"
+          id="input-text"
+          aria-label="Add new todo item"
+        />
+        <!-- Add Button -->
+        <button
+          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-md"
+          aria-label="Add task"
+          id="add-button"
+        >
+          Add
+        </button>
+      </div>
+
+      <!-- Container for all Todos -->
+      <div class="space-y-3 todos-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
