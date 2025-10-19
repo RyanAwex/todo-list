@@ -5,7 +5,7 @@ const trashIcon = document.querySelector(".trash-icon");
 
 const getTodos = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/todos");
+    const response = await fetch("/api/todos");
     if (!response.ok) {
       throw new Error("Network response was not seccusseful");
     }
@@ -46,7 +46,7 @@ addButton.addEventListener("click", async (event) => {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/todos", {
+    const response = await fetch("/api/todos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ addButton.addEventListener("click", async (event) => {
 const editTodo = async (id, checkbox) => {
   const isCompleted = checkbox.checked;
   try {
-    const response = await fetch(`http://localhost:5000/api/todos/${id}`, {
+    const response = await fetch(`/api/todos/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const editTodo = async (id, checkbox) => {
 
 const deleteTodo = async (id) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/todos/${id}`, {
+    const response = await fetch(`/api/todos/${id}`, {
       method: "DELETE",
     });
     if (response.ok) {
